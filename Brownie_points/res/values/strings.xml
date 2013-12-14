@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Brownie_Bonanza</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="connect">Cupcake World!</string>
+    <string name="title">COPMU</string>
+    <string name="text1">type here</string>
+    <string name="choose_event_type">choose</string>
+    <string name="title_activity_bluetooth">BluetoothActivity</string>
+    <string name="hm">Horizontal</string>
+    <string name="vm">Vertical</string>
+    <string name="ac">AirChipper</string>
+    <string name="title_activity_bluetooth_fin">Bluetooth_fin</string>
+
+    <string-array name="choices_array">
+        <item>Syrup</item>
+        <item>Chocolate sprinkles</item>
+        <item>Chocolate chips</item>
+    </string-array>
+
+    <string name="title_activity_express_mode">ExpressMode</string>
+
+</resources>

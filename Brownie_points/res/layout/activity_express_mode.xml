@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ExpressMode" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Express-Mode" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="55dp"
+        android:text="Choose your toppings" />
+
+    <Switch
+        android:id="@+id/s1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/p1"
+        android:layout_below="@+id/p1"
+        android:layout_marginTop="60dp"
+        android:text="Qty:"
+        android:textOff="less"
+        android:textOn="more" />
+
+    <Button
+        android:id="@+id/sbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/p1"
+        android:layout_marginBottom="14dp"
+        android:text="Send" />
+
+    <Spinner
+        android:id="@+id/p1"
+        android:layout_width="500px"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="33dp" />
+
+    <TextView
+        android:id="@+id/rcv"
+        android:layout_width="wrap_content"
+        android:layout_height="30px"
+        android:layout_above="@+id/sbutton"
+        android:layout_alignLeft="@+id/s1"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/box"
+        android:text="Track your Topping"
+        android:textColor="#ff0000" />
+
+    <Button
+        android:id="@+id/buttonb"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/rcv"
+        android:layout_below="@+id/rcv"
+        android:text="Back" />
+
+</RelativeLayout>

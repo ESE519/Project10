@@ -1,0 +1,227 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/img6"
+    tools:context=".Bluetooth_fin" >
+    
+<!--    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="36dp"
+        android:text="@string/hm" />
+        -->
+
+   
+     
+  <!--  <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button1"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_marginLeft="45dp"
+        android:layout_toRightOf="@+id/button1"
+        android:text="@string/vm" />
+    -->
+
+   <!--  <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_marginLeft="90dp"
+        android:layout_toRightOf="@+id/button2"
+        android:text="@string/ac" /> -->
+
+ <!--     <ImageButton
+        android:id="@+id/button2"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_alignParentTop="true"
+     
+        android:layout_marginTop="100dp"
+        android:src="@drawable/imgbt4"
+       />
+       -->
+
+ <!--     <ImageButton
+        android:id="@+id/button1"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="45dp"
+        android:src="@drawable/imgbt1" />
+
+-->
+
+    <!--  <ToggleButton
+        android:id="@+id/t3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/button6"
+        android:layout_alignTop="@+id/button3"
+       
+        android:textOff="Start" 
+        android:textOn="Stop"  />-->
+        
+         
+
+<!--      <ImageButton
+        android:id="@+id/button3"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/textView2"
+        android:src="@drawable/imgbt3" />
+        --> 
+         
+       
+
+    <!-- <ToggleButton
+        android:id="@+id/t2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/t3"
+        android:layout_alignTop="@+id/button2"
+       
+        android:textOff="Start" 
+        android:textOn="Stop"  />
+        -->
+
+ <!--  <ToggleButton
+      android:id="@+id/t1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignRight="@+id/button1"
+      android:layout_below="@+id/textView2"
+      android:layout_marginTop="48dp"
+      android:textOff="Start"
+      android:textOn="Stop" /> -->
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/rcv"
+                android:layout_alignLeft="@+id/rcv"
+                android:layout_marginBottom="23dp"
+                android:text="cancel order" />
+
+          <!--    <TextView
+                android:id="@+id/rcv"
+                android:layout_width="wrap_content"
+                android:layout_height="30px"
+                android:layout_alignLeft="@+id/p4"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="58dp"
+                android:background="@drawable/box"
+                android:text="Track your order"
+                android:textColor="#ff0000" /> -->
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/button5"
+                android:layout_alignBottom="@+id/button5"
+                android:layout_marginLeft="67dp"
+                android:layout_toRightOf="@+id/button5"
+                android:text="Order"
+                android:textColor="#ff0000" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/button4"
+                android:layout_alignBottom="@+id/button4"
+                android:layout_toRightOf="@+id/p4"
+                android:text="Back" />
+
+            <Spinner
+                android:id="@+id/p4"
+                android:layout_width="500px"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/button5"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="36dp" />
+
+            <Spinner
+                android:id="@+id/p3"
+                android:layout_width="500px"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/p4"
+                android:layout_alignLeft="@+id/p4"
+                android:layout_marginBottom="30dp" />
+
+            <Spinner
+                android:id="@+id/p2"
+                android:layout_width="500px"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/p3"
+                android:layout_alignLeft="@+id/p3"
+                android:layout_marginBottom="43dp" />
+
+            <Spinner
+                android:id="@+id/p1"
+                android:layout_width="500px"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/p2"
+                android:layout_marginBottom="57dp"
+                android:layout_toLeftOf="@+id/s1" />
+
+            <Switch
+                android:id="@+id/s4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/p4"
+                android:layout_alignLeft="@+id/s3"
+                android:layout_marginBottom="16dp"
+                android:text="Qty:"
+                android:textOff="less"
+                android:textOn="more" />
+
+            <Switch
+                android:id="@+id/s3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/p3"
+                android:layout_marginBottom="16dp"
+                android:layout_toRightOf="@+id/p3"
+                android:text="Qty:"
+                android:textOff="less"
+                android:textOn="more" />
+
+            <Switch
+                android:id="@+id/s2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/p2"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/p2"
+                android:text="Qty:"
+                android:textOff="less"
+                android:textOn="more" />
+
+            <Switch
+                android:id="@+id/s1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/p1"
+                android:layout_alignLeft="@+id/s2"
+                android:layout_marginBottom="17dp"
+                android:text="Qty:"
+                android:textOff="less"
+                android:textOn="more" />
+
+</RelativeLayout>
