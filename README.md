@@ -1,3 +1,3 @@
-Cupcake World -- Project10
+Cupcake World 
 =========
 
