@@ -66,55 +66,32 @@ public class Bluetooth_fin extends Activity {
 	 
 	 /***TODO*****/
 	 private StringBuilder builder ; //The string builder currently used to send data
-	 private int thing1,thing2,thing3,thing4;
+	 private int thing1,thing2,thing3,thing4; //Generic abstraction of Toppings which can be modified without affecting functionality
 	 Button btn4,btn5,btn6;
 	 Switch s1,s2,s3,s4; //High Low Sliders
 	 Spinner o1,o2,o3,o4; //my Custom Dropdown Implementation
-	 private String sendarr[] = new String[5]; //new implementation String array to send data
+	
 	 Integer[] image = { R.drawable.imgbt3, R.drawable.imgbt2,R.drawable.imgbt4, R.drawable.imgbt1 ,R.drawable.black};
 	 private String[] name = { "chocolate_syrup",  "chocolate_chips","chocolate_sprinkles","sprinkles", "No topping"  };
 	
+	 /********Coomunication Protocol for 2 way Bluetooth transfer *****************/
+
+
+     char r1 = 'p';
+     char r2 = 'S';
+     char r3 = 'H';
+     char r4 = 'C';
+     char r5 = 'R';
+     char r6 = 'D';
+
+
+
+
+
+
+	 /******************************************************************************/
 	 
-	 
-	 /***Display function *****/
-	 String display(String inp)
-	 {
-		 StringBuilder b = new StringBuilder();
-		 for(int i = 0 ; i< inp.length(); i++)
-		 {
-			 char c = inp.charAt(i);
-			 
-			 switch(c)
-			 {
-			 case '1':
-			 { b.append("sprinkles,");
-			   break;
-			 } 
-			 case '3':
-				 {b.append("Chocolate chips,");
-				 break;
-				 }
-			 case '5':
-				 {b.append("Chocolate Syrup,");
-				 break;
-				 }
-			 case '7':
-			 {
-				 b.append("Chocolate Sprinkles,");
-				 break; 
-			 }
-				 
-			default:
-				{b.append("_");
-				  break;
-				}
-			 }
-			 
-		
-		 }
-		 
-		 return b.toString();
-	 }
+	
 	 
 	
 	@Override
@@ -132,7 +109,7 @@ public class Bluetooth_fin extends Activity {
 		
 		builder = new StringBuilder();
 		
-		//rcv = (TextView)findViewById(R.id.rcv); //Track Order Status
+		rcv = (TextView)findViewById(R.id.rcv); //Track Order Status
 		
 		btn4 = (Button)findViewById(R.id.button4);
 		btn5 = (Button)findViewById(R.id.button5);
@@ -248,7 +225,7 @@ public class Bluetooth_fin extends Activity {
 				}	
 			}
 			
-			//Toast.makeText(getBaseContext(), "Thing1" + thing1, Toast.LENGTH_SHORT).show();
+			
 		
 			
 			
@@ -318,7 +295,7 @@ public class Bluetooth_fin extends Activity {
 				}
 			}
 			
-			//Toast.makeText(getBaseContext(), "Thing2" + thing2, Toast.LENGTH_SHORT).show();
+		
 		
 		
 			
@@ -389,7 +366,7 @@ public class Bluetooth_fin extends Activity {
 				}	
 			}
 			
-			//Toast.makeText(getBaseContext(), "Thing3" + thing3, Toast.LENGTH_SHORT).show();
+		
 			
 			
 			
@@ -461,8 +438,7 @@ public class Bluetooth_fin extends Activity {
 				}	
 			}
 			
-			//Toast.makeText(getBaseContext(), "Thing4" + thing4, Toast.LENGTH_SHORT).show();
-			
+		
 			
 			
 			
@@ -501,7 +477,7 @@ public class Bluetooth_fin extends Activity {
 		        	 thing1 = 0;
 		        	 break;
 		         }
-		       //  Toast.makeText(getBaseContext(), "Thing1" + thing1, Toast.LENGTH_SHORT).show();
+		    
 		      
 			    }else{
 
@@ -523,7 +499,7 @@ public class Bluetooth_fin extends Activity {
 				        	thing1 = 0;
 				        	break;
 				         }
-			    	 //  Toast.makeText(getBaseContext(), "Thing1" + thing1, Toast.LENGTH_SHORT).show();
+		
 			    }
 		 }
 	 });
@@ -553,7 +529,7 @@ public class Bluetooth_fin extends Activity {
 			        	 thing2 = 0;
 			        	 break;
 			         }
-				  // Toast.makeText(getBaseContext(), "Thing2" + thing2, Toast.LENGTH_SHORT).show();
+
 			    }else{
 
 			    	switch(thing2)
@@ -574,7 +550,7 @@ public class Bluetooth_fin extends Activity {
 			        	thing2 = 0;
 			        	break;
 			         }
-			    	 //  Toast.makeText(getBaseContext(), "Thing2" + thing2, Toast.LENGTH_SHORT).show();
+			    
 			    }
 		 }
 	 });
@@ -604,8 +580,7 @@ public class Bluetooth_fin extends Activity {
 			        	thing3 = 0;
 			        	break;
 			         }
-				  
-				  // Toast.makeText(getBaseContext(), "Thing3" + thing3, Toast.LENGTH_SHORT).show();
+				
 			    }else{
 
 			    	switch(thing3)
@@ -626,7 +601,7 @@ public class Bluetooth_fin extends Activity {
 			        	thing3 = 0;
 			        	break;
 			         }
-			    	  // Toast.makeText(getBaseContext(), "Thing3" + thing3, Toast.LENGTH_SHORT).show();
+			    	  
 
 			    }
 		 }
@@ -658,7 +633,7 @@ public class Bluetooth_fin extends Activity {
 			        	break;
 			         }
 				  
-				  // Toast.makeText(getBaseContext(), "Thing4" + thing4, Toast.LENGTH_SHORT).show();
+				
 			    }else{
 
 			    	switch(thing4)
@@ -679,7 +654,7 @@ public class Bluetooth_fin extends Activity {
 			        	thing4 = 0;
 			        	break;
 			         }
-			    	 //  Toast.makeText(getBaseContext(), "Thing4" + thing4, Toast.LENGTH_SHORT).show();
+			    	
 
 			    }
 		 }
@@ -726,28 +701,28 @@ public class Bluetooth_fin extends Activity {
 		               switch(strIncom.charAt(0))
 		               {
 		               
-		               case 'P':
-		            	   //rcv.setText("Track your Order:Preparing your Order" );
+		               case r1:
+		            	   rcv.setText("Track your Order:Preparing your Order" );
 		            	   Toast.makeText(getBaseContext(), "Preparing your Order", Toast.LENGTH_SHORT).show();
 		            	   break;
-		               case 'S':
-		            	   //rcv.setText("Track your Order:Adding Sprinkles" );
+		               case r2:
+		            	   rcv.setText("Track your Order:Adding Sprinkles" );
 		            	   Toast.makeText(getBaseContext(), "Adding Sprinkles", Toast.LENGTH_SHORT).show();
 		            	   break;
-		               case 'H':
-		            	   //rcv.setText("Track your Order:Adding Chocolate Sprinkles" );
+		               case r3:
+		            	   rcv.setText("Track your Order:Adding Chocolate Sprinkles" );
 		            	   Toast.makeText(getBaseContext(), "Adding Chocolate Sprinkles", Toast.LENGTH_SHORT).show();
 		            	   break;
-		               case 'C':
-		            	   //rcv.setText("Track your Order:Adding Chocolate Syrup" );
+		               case r4:
+		            	   rcv.setText("Track your Order:Adding Chocolate Syrup" );
 		            	   Toast.makeText(getBaseContext(), "Adding Chocolate Syrup", Toast.LENGTH_SHORT).show();
 		            	   break;
-		               case'R':
-		            	   //rcv.setText("Track your Order:Your Order is Ready" );
+		               case r5:
+		            	   rcv.setText("Track your Order:Your Order is Ready" );
 		            	   Toast.makeText(getBaseContext(), "Order Ready", Toast.LENGTH_SHORT).show();
 		            	   break;
-		               case'D':
-		            	   //rcv.setText("Track your Order: Adding Chocolate Chips");
+		               case r6:
+		            	   rcv.setText("Track your Order: Adding Chocolate Chips");
 		            	   Toast.makeText(getBaseContext(), "Adding Chocolate Chips", Toast.LENGTH_SHORT).show();
 		            	   break;
 		            	   
@@ -869,27 +844,12 @@ public class Bluetooth_fin extends Activity {
 	
 	public void send()
 	{
-		//builder.append(NormalMode);
+		
 	    builder.append(thing1);
 	    builder.append(thing2);
 	    builder.append(thing3);
 	    builder.append(thing4);
 	
-	    /*
-		if(builder.length() > 5)
-			{Toast.makeText(getBaseContext(), "Limit of 5 tasks", Toast.LENGTH_LONG).show();
-			TextView view3 = (TextView)findViewById(R.id.textView2);
-			view3.setText("");
-			builder.delete(0, builder.length());
-			return;
-			}
-		
-		while(builder.length()  < 7)
-		{
-			builder.append("0");
-		}
-		
-		*/
 	    
 	  
        t.sendData(builder.toString());

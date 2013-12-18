@@ -55,13 +55,25 @@ public class ExpressMode extends Activity {
      private ConnectedThread t;
 	 Integer[] image = { R.drawable.imgbt3, R.drawable.imgbt2,R.drawable.imgbt4, R.drawable.imgbt1 ,R.drawable.black};
 	 private String[] name = { "chocolate_syrup",  "chocolate_chips","chocolate_sprinkles","sprinkles", "No topping"  };
-	 private int thing1;
+	 private int thing1; // abstraction of selected topping
 	 
 	 Switch s1;
 	 Spinner o1;
 	 Button s,b;
 	 TextView rcv; // Tracking the Real time status through a Handler
 	 StringBuilder builder;
+    
+    /***********Comm protocol ***********/
+    
+    char r1 = 'S';
+    char r2 = 'H';
+    char r3 = 'C';
+    char r4 = 'D';
+    
+    
+    
+    /**********************************/
+    
 	 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -267,15 +279,15 @@ public class ExpressMode extends Activity {
             {
             
           
-            case 'S':
+            case r1:
          	   rcv.setText("sprinkles added" );
          	   break;
-            case 'H':
+            case r2:
          	   rcv.setText("chocolate sprinkles added" );
          	   break;
-            case 'C':
+            case r3:
          	   rcv.setText("Chocolate Syrup added" );
-            case 'D':
+            case r4:
             	rcv.setText("Chocolate chips added");
          	   break;
             
@@ -353,21 +365,7 @@ public class ExpressMode extends Activity {
 	    builder.append(thing1);
 	 
 	
-	    /*
-		if(builder.length() > 5)
-			{Toast.makeText(getBaseContext(), "Limit of 5 tasks", Toast.LENGTH_LONG).show();
-			TextView view3 = (TextView)findViewById(R.id.textView2);
-			view3.setText("");
-			builder.delete(0, builder.length());
-			return;
-			}
-		
-		while(builder.length()  < 7)
-		{
-			builder.append("0");
-		}
-		
-		*/
+
 	    
 	  
        t.sendData(builder.toString());

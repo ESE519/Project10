@@ -77,6 +77,15 @@ int i;
 /***********************************/
 
 
+/*********Comm Protocol ****************/
+
+char t1 = 'P';
+char t2 = 'S';
+char t3 = 'K';
+char t4 = 'H';
+char t5 = 'C';
+char t6 = 'R';
+/****************************************/
 
 
 /*********** Variables *************/
@@ -277,7 +286,7 @@ int main()
 
             if(val1[0] < 0.4 && val1[1] < 0.4 && val1[2] < 0.4) {
                              // flush();
-                              rcv.printf("P");
+                              rcv.printf(t1);
                              // flush();
                 printf("Scheduling the tasks \r\n");
                 flag = 0;  
@@ -309,7 +318,7 @@ int main()
                     {
                                             
                                     //          flush();
-                                              rcv.printf("S");
+                         rcv.printf(t2);
                         flag_hm1 = 0;
                         
                         /******** Horizontal Mill Out ********/
@@ -373,7 +382,7 @@ int main()
                     {
                                             
                                     //          flush();
-                                              rcv.printf("S");
+                        rcv.printf(t3);
                         flag_hm2 = 0;
                         
                         /******** Horizontal Mill Out ********/
@@ -437,7 +446,7 @@ int main()
                     if(flag_vm == 1)
                     {
                                         //      flush();
-                                              rcv.printf("H");
+                        rcv.printf(t4);
                         flag_vm = 0;
                         
                         /******** Vertical Mill Down ********/
@@ -502,9 +511,9 @@ int main()
                     if(flag_ac == 1)
                     {
                                           //  flush();    
-                                              rcv.printf("C");
+                        rcv.printf(t5);
                         flag_ac = 0;
-                                                liq_pwm(pwm1,tilt);
+                        liq_pwm(pwm1,tilt);
                         tilt = tilt + 23;    
                                                 
                         if(arr_pos != tasks)
@@ -519,7 +528,7 @@ int main()
                 while(wt_posn != 1)
                     worktable();
                 
-                                rcv.printf("R");
+                rcv.printf(t6);
                 /******** Ram Home ********/
                 ram_cw = 0;
                 while(ramhome_ps) {
